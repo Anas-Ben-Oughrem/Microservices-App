@@ -64,7 +64,7 @@ pipeline {
         stage('kubernetes init'){
             steps{
                 script{
-                    sh "minikube start"
+                    sh "minikube start --driver=virtualbox"
                 }
             }
         }
