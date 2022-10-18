@@ -60,6 +60,27 @@ pipeline {
                         }
                     }
                 }
+
+        stage('kubernetes init'){
+            steps{
+                script{
+                    sh "minikube start"
+                }
             }
+        }
+
+        stage('kubernetes deploying to cluster'){
+            steps{
+                script{
+                    sh "kubectl apply -f k8s/minikube/bootstrap/postgres"
+                    sh "kubectl apply -f k8s/minikube/bootstrap/zipkin"
+                    sh "kubectl apply -f k8s/minikube/bootstrap/rabbitmq"
+                    sh "kubectl apply -f k8s/minikube/services/customer"
+                    sh "kubectl apply -f k8s/minikube/services/fraud"
+                    sh "kubectl apply -f k8s/minikube/services/notification"
+                }
+            }
+        }
+    }
   }
 
