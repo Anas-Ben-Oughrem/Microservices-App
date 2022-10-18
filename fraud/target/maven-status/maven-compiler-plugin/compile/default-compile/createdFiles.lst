@@ -1,0 +1,6 @@
+com\amigoscide\fraud\FraudCheckHistoryRepository.class
+com\amigoscide\fraud\FraudCheckHistory$FraudCheckHistoryBuilder.class
+com\amigoscide\fraud\FraudApplication.class
+com\amigoscide\fraud\FraudCheckService.class
+com\amigoscide\fraud\FraudCheckHistory.class
+com\amigoscide\fraud\FraudController.class
